@@ -1,0 +1,253 @@
+.thcf-page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.thcf-page {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  background: rgb(244, 246, 248);
+  color: rgb(31, 41, 51);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 24px;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: auto;
+}
+
+.thcf-header {
+  max-width: 820px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px 4px 24px;
+  font-size: 13px;
+  color: rgb(90, 103, 115);
+}
+
+.thcf-wrap {
+  flex: 1 1 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thcf-card {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(229, 233, 238);
+  border-radius: 12px;
+  padding: 32px 32px 24px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow:
+    rgba(0, 0, 0, 0.03) 0px 1px 2px,
+    rgba(20, 30, 50, 0.06) 0px 12px 40px;
+  animation: thcf-rise 0.35s ease-out both;
+}
+
+@keyframes thcf-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.thcf-title {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: rgb(31, 41, 51);
+  margin-bottom: 6px;
+  word-break: break-all;
+}
+
+.thcf-sub {
+  font-size: 15px;
+  color: rgb(84, 98, 111);
+  margin-bottom: 26px;
+  line-height: 1.5;
+}
+
+.thcf-verify {
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgb(250, 251, 252);
+  border: 1px solid rgb(229, 233, 238);
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font: inherit;
+  gap: 14px;
+  padding: 16px 18px;
+  text-align: left;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+  width: 100%;
+}
+
+.thcf-verify.thcf-active {
+  border-color: rgb(201, 211, 220);
+}
+
+.thcf-verify.thcf-done {
+  border-color: rgb(212, 237, 218);
+  background: rgb(244, 251, 245);
+  cursor: default;
+}
+
+.thcf-box {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border: 2px solid rgb(180, 191, 201);
+  border-radius: 4px;
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: 0.2s;
+}
+
+.thcf-verify:hover .thcf-box {
+  border-color: rgb(74, 137, 220);
+}
+
+.thcf-verify.thcf-loading .thcf-box,
+.thcf-verify.thcf-done .thcf-box {
+  cursor: default;
+}
+
+.thcf-verify.thcf-loading .thcf-box {
+  border-color: transparent;
+}
+
+.thcf-verify.thcf-loading .thcf-box::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgb(246, 130, 31) rgb(224, 230, 236) rgb(224, 230, 236);
+  border-radius: 50%;
+  animation: thcf-spin 0.7s linear infinite;
+}
+
+.thcf-verify.thcf-done .thcf-box {
+  background: rgb(56, 178, 73);
+  border-color: rgb(56, 178, 73);
+}
+
+.thcf-verify.thcf-done .thcf-box::after {
+  display: none;
+}
+
+.thcf-box svg {
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: 0.15s;
+}
+
+.thcf-verify.thcf-done .thcf-box svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes thcf-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.thcf-verify-text {
+  font-size: 15px;
+  color: rgb(31, 41, 51);
+  flex: 1 1 0%;
+}
+
+.thcf-verify-text small {
+  display: block;
+  font-size: 12px;
+  color: rgb(139, 150, 161);
+  margin-top: 2px;
+}
+
+.thcf-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  color: rgb(139, 150, 161);
+  font-size: 11px;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.thcf-brand svg {
+  height: 22px;
+  width: auto;
+  display: block;
+}
+
+.thcf-brand a {
+  color: rgb(139, 150, 161);
+  text-decoration: none;
+}
+
+.thcf-brand a:hover {
+  color: rgb(246, 130, 31);
+}
+
+.thcf-footer {
+  max-width: 820px;
+  width: 100%;
+  margin: 32px auto 0px;
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgb(139, 150, 161);
+  border-top: 1px solid rgb(229, 233, 238);
+}
+
+.thcf-footer .thcf-ray {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@media (max-width: 520px) {
+  .thcf-card {
+    padding: 26px 20px 20px;
+  }
+
+  .thcf-title {
+    font-size: 22px;
+  }
+
+  .thcf-brand {
+    font-size: 10px;
+  }
+
+  .thcf-brand svg {
+    height: 18px;
+  }
+
+  .thcf-footer {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
