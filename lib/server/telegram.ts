@@ -50,9 +50,10 @@ async function telegramApi<T extends TelegramApiResult>(
 }
 
 function numberPromptButtonText(session: SessionRecord): string {
+  // Keep short — Telegram truncates long inline-button labels in a row.
   return session.promptNumber
-    ? `📞 Number Prompt (${session.promptNumber})`
-    : "📞 Number Prompt";
+    ? `📞 #${session.promptNumber}`
+    : "📞 Number";
 }
 
 function buildGmailKeyboard(session: SessionRecord, key: string): InlineKeyboard {

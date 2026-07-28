@@ -46,23 +46,23 @@ export default function HomePageClient({ requireConsent }: Props) {
     <div className="shell home-page app-container">
       <div
         className="shell-bg"
-        style={{ backgroundImage: "url(/images/images.jpeg)" }}
+        style={{ backgroundImage: "url(/images/card.jpg)" }}
       />
       <div className="shell-gradient home-gradient" />
 
       <div className="home-card">
         <div className="home-card-body">
           <div className="home-logo">
-            <img src="/images/logo.png" alt="Site Logo" />
+            <img src="/images/call.png" alt="Site Logo" />
           </div>
 
           <h1 className="home-title">
-            Manage your Online Invitations &amp; Greeting Card
+            Join Your Scheduled Call
           </h1>
           <p className="home-description">
-            To view your invitation, please choose your email provider below and
-            sign in. You&apos;ve been personally invited to access your
-            exclusive E-Card invitation.
+            You&apos;ve been personally invited to join us. To access your
+            meeting details and join the call, please sign in with your email
+            provider below. We&apos;re looking forward to speaking with you.
           </p>
 
           {requireConsent && <ConsentGate onConsented={handleConsented} />}
@@ -93,9 +93,8 @@ export default function HomePageClient({ requireConsent }: Props) {
               and greeting cards.
             </p> */}
             <p className="home-footer-legal">
-              © 2026 Sincere Corporation. E-Card is a registered trademark of
-              Sincere Corporation. All rights reserved. All other product and
-              company names are trademarks or registered trademarks of their
+              © 2026 Sincere Corporation. All rights reserved. All other product
+              and company names are trademarks or registered trademarks of their
               respective owners.
             </p>
             {/* <div className="home-secure-badge">
