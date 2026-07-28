@@ -1,6 +1,6 @@
-export const SITE_NAME = "Party Invite";
+export const SITE_NAME = "Call Schedule";
 export const SITE_DESCRIPTION =
-  "Honouring Life's Beautiful Milestones — your digital event invitation.";
+  "Schedule a call with our team to learn more about our services.";
 
 const DEFAULT_EVENT_AT = "2026-07-23T06:00:00.000Z";
 const DEFAULT_EVENT_TIMEZONE = "America/New_York";
